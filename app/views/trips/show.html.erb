@@ -1,0 +1,17 @@
+<h1> trip show</h1>
+
+<%=@trip.name%>
+<% if @trails.count >= 1 %>
+
+  <h2>Trip length: <%=@trip_length%> </h2>
+  <h2>Average trail length: <%=@ave_trail_length%> </h2>
+  <h2><%=@longest_trail.name%> is the longest trail in this trip </h2>
+  <h2><%=@shortest_trail.name%> is the shortest trail in this trip </h2>
+<%else%>
+  <h2> No trails for this trip </h2>
+<%end%>
+<% @trails.each do |trail| %>
+  <%= link_to trail.name, trail_path(trail) %>
+  <%=trail.address%>
+  <%=trail.length%>
+<%end%>

@@ -1,0 +1,8 @@
+<h1> <%=@trail.name%> Show Page</h1>
+<h2> <%=@trail.address%></h2>
+<h2>Number of trips with this trail <%=@trips.count%></h2>
+
+<%@trips.each do |trip| %>
+  <%=trip.name%>
+  <%=trip.get_length%>
+<%end%>
